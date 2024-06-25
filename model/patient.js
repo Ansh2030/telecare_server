@@ -1,12 +1,17 @@
-const {model} = require('mongoose');
+import mongoose from 'mongoose';
 
-exports.Doctor= model('doctors',{
+const { Schema, model } = mongoose;
+
+const PatientSchema = new Schema({
     name: String,
-  age: Number,
-  gender: String,
-  email: String,
-  specialization: String,
-  years: Number,
-  fees: Number
+    age: Number,
+    gender: String,
+    email: String,
+    specialization: String,
+    years: Number,
+    fees: Number
+});
 
-})
+const Patient = model('Patient', PatientSchema);
+
+export default Patient;
