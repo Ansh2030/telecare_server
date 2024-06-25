@@ -1,14 +1,19 @@
-const express = require("express");
+import express from 'express';
+import Doctor from '../model/doctor.js'; // Adjust the path as per your project structure
+
 const router = express.Router();
-const mongoose = require("mongoose");
-const { Doctor } = require("../model/doctor");
 
+// POST endpoint to save a new doctor
+router.post('/', async (req, res) => {
+    try {
+        const data = req.body;
+        const newDoctor = new Doctor(data);
+        await newDoctor.save();
+        res.send(data);
+    } catch (err) {
+        console.error('Error saving doctor:', err);
+        res.status(500).send('Internal server error');
+    }
+});
 
-router.post('/', async (req, res)=>{
-    data = req.body;
-    const d = new Doctor(data);
-    await  d.save();
-    res.send(data);
-})
-
-module.exports = router;
+export default router;
