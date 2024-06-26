@@ -1,17 +1,36 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const { Schema, model } = mongoose;
+const { Schema, SchemaTypes } = mongoose;
 
-const DoctorSchema = new Schema({
-    name: String,
-    age: Number,
-    gender: String,
-    email: String,
-    specialization: String,
-    years: Number,
-    fees: Number
-});
+const schema = Schema(
+  {
+    userId: {
+      type: SchemaTypes.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    specialization: {
+      type: String,
+      required: true,
+    },
+    experience: {
+      type: Number,
+      required: true,
+    },
+    fees: {
+      type: Number,
+      required: true,
+    },
+    isDoctor: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Doctor = model('Doctor', DoctorSchema);
+const Doctor = mongoose.model("Doctor", schema);
 
 export default Doctor;
