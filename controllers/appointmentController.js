@@ -1,6 +1,6 @@
 // Import necessary models
-import Appointment from "../models/appointmentModel.js";
-import User from "../models/userModel.js";
+import Appointment from "../model/appointement.js";
+// import User from "../models/userModel.js";
 
 // Define controller functions
 const getallappointments = async (req, res) => {

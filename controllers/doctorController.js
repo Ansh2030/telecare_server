@@ -1,7 +1,7 @@
 // Import necessary models
-import Doctor from "../models/doctorModel.js";
-import User from "../models/userModel.js";
-import Appointment from "../models/appointmentModel.js";
+import Doctor from "../model/doctor.js";
+import User from "../model/user.js";
+import Appointment from "../model/appointement.js";
 
 // Define controller functions
 const getalldoctors = async (req, res) => {
