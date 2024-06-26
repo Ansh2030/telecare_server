@@ -1,9 +1,9 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import doctorsRouter from './routes/getDoctor.js'; 
-import patientsRouter from './routes/storePatient.js'
-import doctorAppointement from "./routes/appointement.js"
+import userRouter from "./routes/userRoutes.js";
+import doctorRouter from "./routes/doctorRoutes.js";
+import appointRouter from "./routes/appointRoutes.js";
 const app=express()
 app.use(cors({
     origin:"http://localhost:3000",
@@ -15,10 +15,10 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
-app.use('/api/getDoctors', doctorsRouter);
-app.use('/api/storepatients', patientsRouter);
-app.use('/api/storeDoctor', patientsRouter);
-app.use('/api/appoint', doctorAppointement);
+app.use("/api/user", userRouter);
+app.use("/api/doctor", doctorRouter);
+app.use("/api/appointment", appointRouter);
+app.use("/api/notification", notificationRouter);
 
 
 
