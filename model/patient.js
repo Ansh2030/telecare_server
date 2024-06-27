@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const { Schema, model } = mongoose;
 
-const DoctorSchema = new Schema({
+const PatientSchema = new Schema({
     name: String,
     age: Number,
     gender: String,
@@ -12,6 +12,6 @@ const DoctorSchema = new Schema({
     fees: Number
 });
 
-const Doctor = model('Doctor', DoctorSchema);
+const Patient = model('Patient', PatientSchema);
 
-export default Doctor;
+export default Patient;
