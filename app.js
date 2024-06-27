@@ -6,6 +6,7 @@ import patientsRouter from './routes/storePatient.js'
 import doctorAppointement from "./routes/appointement.js"
 import payment from "./routes/payments.js";
 import appoint from "./routes/appointement.js"
+import storeDoctor from "./routes/storeDoctor.js"
 const app=express()
 app.use(cors({
     origin:"http://localhost:3000",
@@ -19,7 +20,7 @@ app.use(cookieParser())
 
 app.use('/api/getDoctors', doctorsRouter);
 app.use('/api/storepatients', patientsRouter);
-app.use('/api/storeDoctor', patientsRouter);
+app.use('/api/storeDoctor', storeDoctor);
 app.use('/api/appoint', doctorAppointement);
 app.use('/api/orders',payment);
 app.use('/api/appointments',appoint )

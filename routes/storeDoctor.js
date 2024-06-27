@@ -4,9 +4,11 @@ import Doctor from '../model/doctor.js'; // Adjust the path as per your project 
 const router = express.Router();
 
 // POST endpoint to save a new doctor
-router.post('/', async (req, res) => {
+router.post('/store', async (req, res) => {
+    console.log("Ok");
     try {
-        const data = req.body;
+        const data= req.body;
+        console.log(data);
         const newDoctor = new Doctor(data);
         await newDoctor.save();
         res.send(data);
