@@ -7,8 +7,9 @@ const router = express.Router();
 router.get('/doctor', async (req, res) => {
     try {
         const doctors = await Doctor.find();
-        const doctorsArray = doctors.map(doctor => doctor.toObject());
-        res.send(doctorsArray);
+        console.log("doctors list ", doctors);
+        // const doctorsArray = doctors.map(doctor => doctor.toObject());
+        res.send(doctors);
     } catch (err) {
         console.error('Error retrieving doctors:', err);
         res.status(500).send('Internal server error');

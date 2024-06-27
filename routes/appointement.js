@@ -3,12 +3,16 @@ import Patient from '../model/patient.js';
 
 const router = express.Router();
 
+router.post('/bookAppointment', async (req, res)=>{
+    const data = req.body;
+    console.log(data);
+})
 
 // POST endpoint to save a new patient
 router.post('/getappointment', async (req, res) => {
     try {
         console.log("hi");
-       const {loggedin}=req.body;
+       const {user, loggedin}=req.body;
        
     //    const user= await  Patient.findOne({name})
        if(!loggedin){
