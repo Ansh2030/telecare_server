@@ -1,3 +1,4 @@
+
 import express from 'express';
 import Doctor from '../model/doctor.js'; // Adjust the path as per your project structure
 

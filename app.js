@@ -7,6 +7,7 @@ import doctorAppointement from "./routes/appointement.js"
 import payment from "./routes/payments.js";
 import appoint from "./routes/appointement.js"
 import storeDoctor from "./routes/storeDoctor.js"
+
 const app=express()
 app.use(cors({
     origin:"http://localhost:3000",

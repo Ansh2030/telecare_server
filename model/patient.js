@@ -9,7 +9,7 @@ const PatientSchema = new Schema({
     email: String,
    address: String,
     phone: String,
-     file: String
+    prescription: String,
 });
 
 const Patient = model('Patient', PatientSchema);
