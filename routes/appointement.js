@@ -1,13 +1,24 @@
 import express from 'express';
-import Patient from '../model/patient.js';
+import Appointment from '../model/appointement.js';
 
 const router = express.Router();
 
 router.post('/bookAppointment', async (req, res)=>{
     const data = req.body;
     console.log(data);
+    const Appoint = new Appointment(data);
+        await Appoint.save();
 })
 
+
+router.post("/update",async(req,res)=>{
+    const{patemail,doctemail,link}=req.body;
+    Appointment.updateOne({
+        patemail:patemail,
+        docemail:doctemail
+    },  {$set: { link: link } }
+    )
+})
 // POST endpoint to save a new patient
 router.post('/getappointment', async (req, res) => {
     try {
