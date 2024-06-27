@@ -10,7 +10,7 @@ import storeDoctor from "./routes/storeDoctor.js"
 
 const app=express()
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"*",
     credentials:true
 }))
 app.use(express.json({limit:"20kb"}))
@@ -21,7 +21,7 @@ app.use(cookieParser())
 
 app.use('/api/getDoctors', doctorsRouter);
 app.use('/api/storepatients', patientsRouter);
-app.use('/api/storeDoctor', storeDoctor);
+app.use('/api/storeDoctor', patientsRouter);
 app.use('/api/appoint', doctorAppointement);
 app.use('/api/orders',payment);
 app.use('/api/appointments',appoint )
