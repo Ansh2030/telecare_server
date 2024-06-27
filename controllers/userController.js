@@ -1,7 +1,7 @@
 // Import necessary modules
-import User from "../model/user.js";
-import Doctor from "../model/doctor.js";
-import Appointment from "../model/appointement.js";
+import User from "../models/userModel.js";
+import Doctor from "../models/doctorModel.js";
+import Appointment from "../models/appointmentModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
