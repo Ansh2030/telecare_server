@@ -4,7 +4,7 @@ import Patient from '../model/patient.js'; // Adjust the path as per your projec
 const router = express.Router();
 
 // POST endpoint to save a new patient
-router.post('/', async (req, res) => {
+router.post('/patients', async (req, res) => {
     try {
         const data = req.body;
         const newPatient = new Patient(data);

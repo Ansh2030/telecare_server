@@ -7,9 +7,9 @@ const PatientSchema = new Schema({
     age: Number,
     gender: String,
     email: String,
-    specialization: String,
-    years: Number,
-    fees: Number
+   address: String,
+    phone: String,
+     file: String
 });
 
 const Patient = model('Patient', PatientSchema);
