@@ -25,6 +25,6 @@ app.use('/api/orders',payment);
 app.use('/api/appointments',appoint )
 
 
-// /api/getDoctors
+
 
 export  {app}
