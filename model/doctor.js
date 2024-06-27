@@ -4,14 +4,10 @@ const { Schema, SchemaTypes } = mongoose;
 
 const schema = Schema(
   {
-    // userId: {
-    //   type: SchemaTypes.ObjectId,
-    //   ref: "User",
-    //   required: true,
-    // },
-    email:{
-      type:String,
-      required: true
+    userId: {
+      type: SchemaTypes.ObjectId,
+      ref: "User",
+      required: true,
     },
     specialization: {
       type: String,
